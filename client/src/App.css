@@ -3,6 +3,19 @@ a {
   color: black
 }
 
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 200;
+    color: #111;
+    font-size: .95em;
+}
+
+h1, h2, h3, h4, h5 {
+    font-weight: 200;
+}
+
+
 /* MENU NAVEGACION */
 
 .toggle-menu {
@@ -83,9 +96,22 @@ ul {
   position:fixed;
   left:0px;
   bottom:0px;
-  height:250px;
+  height:100px;
   width:100%;
   background:#999;
+}
+
+.container {
+  padding-top: 90px
+}
+/*Plan detail*/
+
+.coaster-detail img {
+  width: 100%;
+}
+
+.coaster-detail h1 {
+  margin-bottom: 60px;
 }
 /* .App {
   text-align: center;

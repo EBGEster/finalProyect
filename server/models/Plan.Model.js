@@ -20,7 +20,7 @@ const planSchema = new Schema({
     },
     location: {
         lat: {type: Number, required: true},
-        long:  {type: Number, required: true}
+        lng:  {type: Number, required: true}
     }
 }, { timestamps: true })
 

@@ -11,6 +11,8 @@ import PlanDetail from './components/PlanDetail'
 import Login from './components/auth/Login'
 import Signup from './components/auth/Signup'
 import Footer from './components/footer'
+import SignupCompany from './components/auth/SignupCompany';
+import LoginCompany from './components/auth/LoginCompany';
 
 class App extends Component {
   constructor(){
@@ -54,7 +56,9 @@ class App extends Component {
         <Switch>
           <Route exact path='/plans' render={() => <PlanList userInSession={this.state.loggedInUser}/>}/>
           <Route path="/signup" exact render={match => <Signup {...match} setUser={this.setTheUser} />} />
+          <Route path="/signup/company" exact render={match => <SignupCompany {...match} setUser={this.setTheUser} />} />
           <Route path="/login" exact render={match => <Login {...match} setUser={this.setTheUser} />} />
+          <Route path="/login/company" exact render={match => <LoginCompany {...match} setUser={this.setTheUser} />} />
         </Switch>
 
         <Footer/>

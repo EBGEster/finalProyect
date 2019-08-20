@@ -12,7 +12,7 @@ const PlanCard = ({ title, description, imageUrl, _id }) => {
                 <img src={imageUrl} alt={title} />
                 <h4>{title}</h4>
                 <hr></hr>
-                <Link className="btn btn-sm btn-dark" to={`/coasters/${_id}`}>Ver detalles</Link>
+                <Link className="btn btn-sm btn-dark" to={`/plans/${_id}`}>Ver detalles</Link>
                 <p>{description}</p>
             </article>
         </div>
