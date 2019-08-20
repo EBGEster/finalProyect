@@ -8,9 +8,15 @@ const hbs          = require('hbs');
 const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
+const cors         = require('cors')
+
+const session = require('express-session')
+const passport = require('passport')
+const MongoStore = require('connect-mongo')(session)
 
 
 require('./configs/mongoose.config')
+require('./configs/passport.config')
 
 const app_name = require('./package.json').name;
 const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
@@ -30,7 +36,30 @@ app.use(require('node-sass-middleware')({
   dest: path.join(__dirname, 'public'),
   sourceMap: true
 }));
+
+// CORS middleware
+const whitelist = ['http://localhost:3000']
+const corsOptions = {
+  origin: (origin, cb) => {
+    const originIsWhitelisted = whitelist.includes(origin)
+    cb(null, originIsWhitelisted)
+  },
+  credentials: true
+}
+app.use(cors(corsOptions))
+
       
+// Configuración de sesión
+app.use(session({
+  secret: 'TheSecret',
+  resave: true,
+  saveUninitialized: true,
+  store: new MongoStore({ mongooseConnection: mongoose.connection })
+
+}))
+app.use(passport.initialize())
+app.use(passport.session())
+
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -44,7 +73,9 @@ app.locals.title = 'Express - Generated with IronGenerator';
 
 
 //Base URL's
-app.use('/', require('./routes/index'))
-
+app.use('/', require('./routes/index.routes'))
+app.use('/api', require('./routes/plan.routes'))
+app.use('/api', require('./routes/comment.routes'))
+app.use('/api', require('./routes/auth.routes'))
 
 module.exports = app;
