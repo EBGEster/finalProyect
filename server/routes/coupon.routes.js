@@ -24,7 +24,6 @@ router.post('/createCoupon', (req, res) => {
                // console.log(user, "busquser")
                 res.json(newCoupon)
             })
-        
     })
     .catch(err => console.log('Error', err))
 })

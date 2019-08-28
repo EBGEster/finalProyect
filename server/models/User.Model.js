@@ -3,12 +3,8 @@ const Schema   = mongoose.Schema
 
 const userSchema = new Schema({
   username: { type: String, required: true },
-  lastname: { type: String, required: true },
   password: { type: String, required: true },
   email: { type: String, required: true, unique: true },
-  city: { type: String, required: true },
-  creditCard: {type: String},
-  photo: String,
   chatToken: String,
   userPlans: [{type: Schema.Types.ObjectId, ref: 'Coupon'}],
   role: {type: String, default: "user"}

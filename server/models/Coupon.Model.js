@@ -19,6 +19,6 @@ const couponSchema = new Schema({
     username: String,
     rated: {trype: Boolean, default: false},
     commented: {type: Boolean, default: false}
-})
+}, { timestamps: true })
 const Coupon = mongoose.model('Coupon', couponSchema)
 module.exports = Coupon

@@ -212,10 +212,11 @@ Plan.collection
 // },
 
 ]
-Plan.create(plans, err => {
-    if (err) {
-      throw err;
-    }
+Plan.create(plans)
+ .then(plans => {
+    
     console.log(`Created, ${plans.length} plans`);
     mongoose.connection.close();
-  });
+  })
+  .catch(err => console.log(err))
+  ;
