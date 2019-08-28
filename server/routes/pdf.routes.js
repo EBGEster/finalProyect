@@ -37,7 +37,7 @@ router.get('/fetch-pdf/:email', (req,res) => {
     //     console.log(`${__dirname}/.. contains:`)
     //     console.log(items);
     // });
-    console.log(req.params)
+    console.log("params",req.params)
     transporter.sendMail({
         from: '"Disfruton App" <process.env.EMAIL>',
         to: req.params.email,

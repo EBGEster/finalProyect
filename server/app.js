@@ -76,13 +76,13 @@ app.locals.title = 'Express - Generated with IronGenerator';
 
 
 //Base URL's
-app.use('/', require('./routes/index.routes'))
+// app.use('/', require('./routes/index.routes'))
 app.use('/api', require('./routes/plan.routes'))
 app.use('/api', require('./routes/comment.routes'))
 app.use('/api', require('./routes/auth.routes'))
 app.use('/api', require('./routes/file-upload.routes'))
 app.use('/api', require('./routes/payment.routes'))
-app.use('/', require('./routes/pdf.routes'))
+app.use('/api', require('./routes/pdf.routes'))
 app.use('/api', require('./routes/coupon.routes.js'))
 
 

@@ -25,8 +25,9 @@ class PdfCreator extends Component {
     createAndDownloadPdf = () => {
         this.props.pdfGenerated();
 
-        axios.post(`${process.env.REACT_APP_URL}/create-pdf`, this.state)
-            .then(() => axios.get(`${process.env.REACT_APP_URL}/fetch-pdf/${this.props.email}`, {responseType: 'blob'}))
+        console.log(`${process.env.REACT_APP_URL_API}create-pdf`)
+        axios.post(`${process.env.REACT_APP_URL_API}create-pdf`, this.state)
+            .then(() => axios.get(`${process.env.REACT_APP_URL_API}fetch-pdf/${this.props.email}`, {responseType: 'blob'}))
             .then((res) => {
                 const pdfBlob = new Blob([res.data], {type: 'application/pdf'})
                 saveAs(pdfBlob, 'newPdf.pdf')

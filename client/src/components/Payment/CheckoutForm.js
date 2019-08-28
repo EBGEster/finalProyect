@@ -60,7 +60,8 @@ class CheckoutForm extends Component {
         this.couponservices.createCoupon(this.state.coupon)
         .then(x => {
           //console.log(x.data._id)
-          this.setState({qrData : `${process.env.REACT_APP_URL_API}updateCoupon/${x.data._id}`})
+          console.log(`${process.env.REACT_APP_QRCODE}updateCoupon/${x.data._id}`)
+          this.setState({qrData : `${process.env.REACT_APP_QRCODE}updateCoupon/${x.data._id}`})
           
         })
         .catch(err => console.log('error', err))

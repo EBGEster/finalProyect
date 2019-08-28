@@ -20,8 +20,8 @@ class Signup extends Component {
 
     handleFormSubmit = e => {
         e.preventDefault()
-        const {username, lastname, password, email, city} = this.state
-        this.authServices.signup(username, lastname, password, email, city)
+        const {username, password, email} = this.state
+        this.authServices.signup(username,  password, email)
             .then(newUser => {
                 this.setState({
                     username: '',
