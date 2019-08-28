@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e97ec0e8.chunk.css",
+    "main.js": "/static/js/main.1f05b190.chunk.js",
+    "main.js.map": "/static/js/main.1f05b190.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.ea92a0de.js",
+    "runtime~main.js.map": "/static/js/runtime~main.ea92a0de.js.map",
+    "static/js/2.226a6b9d.chunk.js": "/static/js/2.226a6b9d.chunk.js",
+    "static/js/2.226a6b9d.chunk.js.map": "/static/js/2.226a6b9d.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.b69e0bffa1817890fb9bf1ba53925b28.js": "/precache-manifest.b69e0bffa1817890fb9bf1ba53925b28.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.e97ec0e8.chunk.css.map": "/static/css/main.e97ec0e8.chunk.css.map",
+    "static/media/car-service.svg": "/static/media/car-service.04ed139c.svg",
+    "static/media/comment.svg": "/static/media/comment.ea0d77b7.svg",
+    "static/media/cycling.svg": "/static/media/cycling.4babdd32.svg",
+    "static/media/discount-voucher.svg": "/static/media/discount-voucher.9029a15d.svg",
+    "static/media/dish.svg": "/static/media/dish.fbca1a1f.svg",
+    "static/media/dryer.svg": "/static/media/dryer.2946bf54.svg",
+    "static/media/fire.svg": "/static/media/fire.63098871.svg",
+    "static/media/heart-rate.svg": "/static/media/heart-rate.ae1f8968.svg",
+    "static/media/time.svg": "/static/media/time.b8c232a9.svg",
+    "static/media/views.svg": "/static/media/views.2f6a2ace.svg"
+  }
+}
