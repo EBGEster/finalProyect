@@ -10,7 +10,8 @@ const userSchema = new Schema({
   creditCard: {type: String},
   photo: String,
   chatToken: String,
-  plans: {type: Schema.Types.ObjectId, ref: 'Plan'}
+  userPlans: [{type: Schema.Types.ObjectId, ref: 'Coupon'}],
+  role: {type: String, default: "user"}
 }, 
 {timestamps: true })
 

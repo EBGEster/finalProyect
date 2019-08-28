@@ -3,16 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@react-pdf/renderer": "^1.6.4",
     "axios": "^0.19.0",
     "bootstrap": "^4.3.1",
     "dotenv-cli": "^2.0.1",
+    "file-saver": "^2.0.2",
     "google-map-react": "^1.1.4",
     "mdbreact": "^4.19.1",
     "react": "^16.9.0",
     "react-bootstrap": "^1.0.0-beta.11",
+    "react-bootstrap-star-rating": "^3.5.5-alpha.0.3",
     "react-dom": "^16.9.0",
     "react-router-dom": "^5.0.1",
-    "react-scripts": "3.1.1"
+    "react-scripts": "3.1.1",
+    "react-search-input": "^0.11.3",
+    "react-star-rating-component": "^1.4.1",
+    "react-stripe-elements": "^4.0.1",
+    "react-vivus": "0.0.2",
+    "vivus": "^0.4.4"
   },
   "scripts": {
     "start": "dotenv -e .env react-scripts start",

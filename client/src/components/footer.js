@@ -15,11 +15,10 @@ const FooterPagePro = () => {
             <h5 className="mb-1">¿Eres empresa?</h5>
           </li>
           <li >
-            <Link to={'/signup/company'} className="btn btn-danger btn-rounded">
+            <Link to={'/signup/company'} className="btn btn-light btn-rounded company-button">
               Crea una Cuenta
-            </Link> </li> <br/>
-            <li>
-            <Link to={'/login/company'} className="btn btn-danger btn-rounded">
+            </Link> 
+            <Link to={'/login/company'} className="btn btn-light btn-rounded company-button">
               Inicia Sesión
             </Link>
           </li>
@@ -29,7 +28,7 @@ const FooterPagePro = () => {
       
       <div className="footer-copyright text-center py-3">
         <MDBContainer fluid>
-          &copy; {new Date().getFullYear()} Copyright: <a href="#"> Disfruton App </a>
+          &copy; {new Date().getFullYear()} Copyright: <a href="/"> Disfruton App </a>
         </MDBContainer>
       </div>
     </MDBFooter>

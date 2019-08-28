@@ -3,6 +3,14 @@ a {
   color: black
 }
 
+img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  object-position: center
+  
+
+}
 
 body {
     font-family: 'Raleway', sans-serif;
@@ -15,6 +23,9 @@ h1, h2, h3, h4, h5 {
     font-weight: 200;
 }
 
+.under-nav {
+  padding: 90px
+}
 
 /* MENU NAVEGACION */
 
@@ -93,12 +104,16 @@ ul {
 /* Footer*/
 
 #footer {
-  position:fixed;
+  
   left:0px;
   bottom:0px;
-  height:100px;
+  
   width:100%;
   background:#999;
+}
+
+.company-button {
+  margin: 0 10px
 }
 
 .container {
@@ -112,6 +127,11 @@ ul {
 
 .coaster-detail h1 {
   margin-bottom: 60px;
+}
+
+/*PlanForm*/
+.form-plan-btn {
+  margin: 0 0 0 300px
 }
 /* .App {
   text-align: center;

@@ -7,6 +7,15 @@ const bcrypt = require('bcrypt');
 const User = require('../models/User.Model');
 const Company = require('../models/Company.Model')
 
+const nodemailer = require('nodemailer')
+
+let transporter = nodemailer.createTransport({
+    service: 'Gmail',
+    auth: {
+        user: `${process.env.EMAIL}`,
+        pass: `${process.env.PASSWORD}`
+    }
+})
 
 authRoutes.post('/signup', (req, res, next) => {
     const { username, lastname, password, email, city, creditCard, photo, chatToken, plans } = req.body
@@ -54,7 +63,17 @@ authRoutes.post('/signup', (req, res, next) => {
                 res.status(400).json({ message: 'Saving user to database went wrong.', err });
                 return;
             }
-
+            transporter.sendMail({
+                from: '"Disfruton App" <process.env.EMAIL>',
+                to: email,
+                subject: 'Gracias por registrarte en Disfruton App',
+                text: 'Mensaje de bienvenida',
+                html:  `<h2>Ya eres parte de la página con los mejores planes</h2>
+                <p>You can start sharing your favourites worlds locations with the other user and discover
+                where can you go in your next travel, what can you do there and why have to go, the triple 'W' + I do.</p>
+                <p>Thank you for your registration and enjoy!</p>
+                <img src=https://res.cloudinary.com/dpkvkfi5u/image/upload/v1564399013/wIdo-gallery/logo-wIdo.png.png>`
+            })
             // Automatically log in user after sign up
             // .login() here is actually predefined passport method
             req.login(aNewUser, (err) => {

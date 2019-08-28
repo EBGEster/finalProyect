@@ -9,6 +9,8 @@ const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
 const cors         = require('cors')
+const stripe       = require("stripe")(`${process.env.stripeApiKey}`)
+
 
 const session = require('express-session')
 const passport = require('passport')
@@ -28,6 +30,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+
 
 // Express View engine setup
 
@@ -77,5 +80,19 @@ app.use('/', require('./routes/index.routes'))
 app.use('/api', require('./routes/plan.routes'))
 app.use('/api', require('./routes/comment.routes'))
 app.use('/api', require('./routes/auth.routes'))
+app.use('/api', require('./routes/file-upload.routes'))
+app.use('/api', require('./routes/payment.routes'))
+app.use('/', require('./routes/pdf.routes'))
+app.use('/api', require('./routes/coupon.routes.js'))
+
+
+// GET from pdf-routes - Send the generated pdf to the client
+// app.get('/fetch-pdf', (req,res) => {
+// //   res.sendFile(`${__dirname}/result.pdf`)
+//   fs.readdir(`${__dirname}`, function(err, items) {
+//     console.log(`${__dirname} contains:`)
+//     console.log(items);
+//   });
+// })
 
 module.exports = app;

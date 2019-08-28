@@ -6,18 +6,19 @@ const planSchema = new Schema({
     description: { type: String, required: true },
     price: { type: Number, required: true },
     units:{type:Number, required: true},
+    stock:{type:Number},
     category:{type: String, required: true, enum:["beauty", "gastro", "automotive", "leisure", "health-and-fitness"]},
     terms:  {type: String, required: true},
-    imageUrl: { type: String, required: true },
+    imageUrl: { type: String},
     companyName: {type: String, required: true},
     address: {type: String, required:true},
     city: {type: String, required: true},
-    rate: {type: Number},
-    votes: {type: Number},
-    comments : {
+    rate: {type: Number, default: 3},
+    votes: {type: Number, default: 187},
+    comments : [{
         user: {type: String},
         comment:{type: String}
-    },
+    }],
     location: {
         lat: {type: Number, required: true},
         lng:  {type: Number, required: true}

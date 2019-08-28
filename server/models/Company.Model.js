@@ -9,7 +9,9 @@ const companySchema = new Schema({
   city: { type: String, required: true },
   vatNumber: {type: String, required: true},
   chatToken: String,
-  plans: {type: Schema.Types.ObjectId, ref: 'Plan'}
+  plans: {type: Schema.Types.ObjectId, ref: 'Plan'},
+  role: {type: String, default: "company"}
+
 }, 
 {timestamps: true })
 

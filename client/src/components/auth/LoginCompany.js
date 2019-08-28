@@ -27,7 +27,7 @@ class Login extends Component {
                     password: ''
                 })
                 this.props.setUser(theLoggedUser)
-                this.props.history.push('/plans')
+                this.props.history.push('/profile')
             })
             .catch(err => console.log(err.response.data.message))
     }

@@ -35,7 +35,7 @@ class SignupCompany extends Component {
                     vatNumber: ''  
                 })
                 this.props.setUser(newUser)
-                this.props.history.push('plans')
+                this.props.history.push('/profile')
             })
     }
     render() {

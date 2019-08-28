@@ -1,0 +1,10 @@
+
+a , a:hover {
+    text-decoration: none;
+    color:#000000
+}
+
+.mini-img {
+    width: 150px;
+    height: 100px;
+}

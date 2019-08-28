@@ -1,0 +1,9 @@
+.rating-div {
+    display: flex;
+    justify-content: space-between;
+}
+
+a , a:hover {
+    text-decoration: none;
+    color:#000000
+}

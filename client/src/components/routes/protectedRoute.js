@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 
 const protectedRoute = ({ component: Component, user, redirectPath, ...rest }) => {
-
+console.log(user)
     return (
         <Route {...rest} render={props => {
             if (user) {
