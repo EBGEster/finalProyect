@@ -48,7 +48,7 @@ class CheckoutForm extends Component {
       //     body: `${token.token.id} `
           
       //     })
-      let response = await fetch('http://localhost:5000/api/charge'/* + 'charge'*/,{
+      let response = await fetch(`${process.env.REACT_APP_URL_API}charge`,{
       method: "POST",
       headers: {"Content-Type": "text/plain"},
       body: `${token.token.id}` 
@@ -60,7 +60,7 @@ class CheckoutForm extends Component {
         this.couponservices.createCoupon(this.state.coupon)
         .then(x => {
           //console.log(x.data._id)
-          this.setState({qrData : `http://localhost:3000/updateCoupon/${x.data._id}`})
+          this.setState({qrData : `${process.env.REACT_APP_URL_API}updateCoupon/${x.data._id}`})
           
         })
         .catch(err => console.log('error', err))

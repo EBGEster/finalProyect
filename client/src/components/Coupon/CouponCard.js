@@ -5,6 +5,7 @@ import {Card, Button} from 'react-bootstrap'
 
 
 import '../styles/CouponCard.css'
+import CommentCard from '../comments/Comment.Card';
 
 
 const CouponCard = ({ title, imageUrl, _id , price, companyName, state, rated, commented}) => {
@@ -15,11 +16,13 @@ const CouponCard = ({ title, imageUrl, _id , price, companyName, state, rated, c
     else if(state === "redeemed") {
         status = "Ya se ha disfrutado"
         if (rated === false && commented === false){
-            mydiv = <></>
-        } else if (rated === true && commented === true){
             mydiv = <>
                 <button>Valorar Disfrutón</button>
-        </>
+                <CommentCard/>
+                
+                </>
+        } else if (rated === true && commented === true){
+            mydiv = <></>
         }
     
     }
@@ -27,7 +30,6 @@ const CouponCard = ({ title, imageUrl, _id , price, companyName, state, rated, c
     return (
         
         <>  
-            
             <Card className="text-center">
                 <Card.Header>Disfrutón</Card.Header>
                 <Card.Body>
