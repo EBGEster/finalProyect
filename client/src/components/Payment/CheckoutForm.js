@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {CardElement, injectStripe} from 'react-stripe-elements';
 import Paymentservices from '../../services/payment.services'
 import Couponservices from '../../services/coupon.services'
+import { Redirect } from 'react-router-dom'
 
 import PdfCreator from './PdfCreator'
 
@@ -10,6 +11,7 @@ class CheckoutForm extends Component {
         super(props);
         this.state = {
           plan: this.props.plan,
+          redirect: false,
           complete: false,
           price: this.props.total,
           promCode: "So_party",
@@ -55,7 +57,7 @@ class CheckoutForm extends Component {
       });
       //console.log(response)
     if (response.ok) {
-      this.setState({complete: true})
+      this.setState({complete: true , redirect: true})
 
         this.couponservices.createCoupon(this.state.coupon)
         .then(x => {
@@ -66,6 +68,7 @@ class CheckoutForm extends Component {
         })
         .catch(err => console.log('error', err))
       };
+
   }
 
 handleFormSubmit = e => {
@@ -105,19 +108,25 @@ pdfGenerated = () => {
     //console.log(this.props.email)
     //console.log(this.state.price, "soy el precio")
     console.log("Soy el qr", this.state.qrData)
+
+    
     if (this.state.complete) {
       let pdfCreatorTag = <></>
-
+      
       
       if (!this.state.pdfGenerated && this.state.qrData) 
-        pdfCreatorTag = <PdfCreator qrInfo={this.state.qrData} info={this.state.plan} price={this.state.price} pdfGenerated={this.pdfGenerated} email={this.props.email}/>
-
+      pdfCreatorTag = <PdfCreator qrInfo={this.state.qrData} info={this.state.plan} price={this.state.price} pdfGenerated={this.pdfGenerated} email={this.props.email}/>
+      
+      // if (this.state.redirect) {
+      // console.log("me redirijo")
+      //        return <Redirect to='/profile'/>}
       return(
         <>
           <h1>Pago realizado correctamente</h1>
           <h1>Generando Disfrutón...</h1>
           {pdfCreatorTag}
           
+           
         </>
       )
     }

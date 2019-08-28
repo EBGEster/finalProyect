@@ -11,7 +11,7 @@ const PlanCard = ({ title, description, imageUrl, _id , price, companyName, rate
 
     return (
         
-        <div className="col-md-4">  
+        <div className="col-md-4 blank-space">  
             <Link to={`/plans/${_id}`}>
                 <Card>
                     <Card.Img variant="top" src={imageUrl} />
