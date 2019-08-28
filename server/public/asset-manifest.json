@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.e97ec0e8.chunk.css",
-    "main.js": "/static/js/main.c76ae4b4.chunk.js",
-    "main.js.map": "/static/js/main.c76ae4b4.chunk.js.map",
+    "main.js": "/static/js/main.0b0212a0.chunk.js",
+    "main.js.map": "/static/js/main.0b0212a0.chunk.js.map",
     "runtime~main.js": "/static/js/runtime~main.ea92a0de.js",
     "runtime~main.js.map": "/static/js/runtime~main.ea92a0de.js.map",
     "static/js/2.226a6b9d.chunk.js": "/static/js/2.226a6b9d.chunk.js",
     "static/js/2.226a6b9d.chunk.js.map": "/static/js/2.226a6b9d.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.3760b2c5a91db955eafca7221ba4fa65.js": "/precache-manifest.3760b2c5a91db955eafca7221ba4fa65.js",
+    "precache-manifest.2b738fda535283c7fc431637741cf8d8.js": "/precache-manifest.2b738fda535283c7fc431637741cf8d8.js",
     "service-worker.js": "/service-worker.js",
     "static/css/main.e97ec0e8.chunk.css.map": "/static/css/main.e97ec0e8.chunk.css.map",
     "static/media/car-service.svg": "/static/media/car-service.04ed139c.svg",
