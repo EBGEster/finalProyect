@@ -49,7 +49,7 @@ class Profile extends Component {
             
         return(
             <> 
-            <h1>Soy el profile del user</h1>
+            <h1>Área Privada</h1>
 
             <Link to="profile/coupons"> <button className="btn btn-dark btn-big" onClick={()=>this.showCoupons()}>Mis disfrutones</button> </Link>
 
@@ -59,7 +59,7 @@ class Profile extends Component {
         
             return(
                 <> 
-                <h1>Soy el profile de la company</h1>
+                <h1>Área Privada </h1>
                 {/* {console.log("company")} */}
                 <button className="btn btn-dark btn-big" >Estadísticas</button> <br/><br/>
                 <button className="btn btn-dark btn-big" onClick={this.handleModalOpen}>Nuevo Plan</button><br/><br/>
