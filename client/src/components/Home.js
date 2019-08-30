@@ -15,8 +15,8 @@ import { withRouter } from "react-router";
 
 
 class Home extends Component{
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state = {
             plans: [],
             modal14: false,

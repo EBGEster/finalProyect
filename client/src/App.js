@@ -73,7 +73,7 @@ class App extends Component {
           
           <div className="under-nav">
         <Switch>
-          <Route exact path='/' render={() => <Home />}/>
+          <Route exact path='/' render={() => <Home setUser={this.setTheUser}/>}/>
           <Route exact path='/plans' render={() => <PlanList userInSession={this.state.loggedInUser}/>}/>
           <Route path="/signup" exact render={match => <Signup {...match} setUser={this.setTheUser} />} />
           <Route path="/signup/company" exact render={match => <SignupCompany {...match} setUser={this.setTheUser} />} />
