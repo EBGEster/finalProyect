@@ -50,6 +50,7 @@ class App extends Component {
           <div className="under-nav">
         <Switch> 
 
+        <Route exact path='/' render={() => <Home setUser={this.setTheUser}/>}/>
           <ProtectedRoute exact path='/profile' user={this.state.loggedInUser} component={Profile} />
           <ProtectedRoute exact path='/profile/plans' user={this.state.loggedInUser} component={CompanyPlans} />
           <ProtectedRoute exact path='/profile/coupons' user={this.state.loggedInUser} component={UserCoupons} />

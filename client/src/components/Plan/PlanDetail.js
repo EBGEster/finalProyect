@@ -53,9 +53,9 @@ class PlanDetail extends Component {
             // console.log(this.state.plan.stock)
             let theStock
 
-            if (this.state.plan.stock>=20){
+            if (this.state.plan.units>=20){
                  theStock = <div className="col-4"><Time/> <small>Aún disponible</small></div>  } 
-                else if (this.state.plan.stock<20){
+                else if (this.state.plan.units<20){
                 theStock = <div className="col-4"><Fire/> <small>Agotándose</small></div>
             }
             return (

@@ -95,7 +95,7 @@ module.exports = ({ companyName, title, imageUrl, price, address, city, terms, q
                </style>
             </head>
             <body>
-            <img src="" alt="logo">
+            <img src="https://res.cloudinary.com/ebg-ester/image/upload/v1567110748/el9soo8m2e5zaqfzfutd.png" alt="logo">
             <div class="container">
                 <div class="row">
                     <div class="col-8 .invoice-box">

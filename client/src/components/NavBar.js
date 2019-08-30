@@ -145,7 +145,7 @@ class NavBar extends Component {
                     </Navbar> */}
                     <div className="toggle-menu" onClick={this.toggleMenu}>&equiv; </div>
                     <header className="menu">
-                        <h1><Link to="/">Disfruton App</Link></h1>
+                        <h1><Link to="/"> <img className="logo-disfruton" src="https://res.cloudinary.com/ebg-ester/image/upload/v1567110748/el9soo8m2e5zaqfzfutd.png" alt="logo"/></Link></h1>
                         <nav>
                             <ul>
                                 <li><Link to="/">Inicio</Link></li>
