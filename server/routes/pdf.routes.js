@@ -41,13 +41,29 @@ router.get('/fetch-pdf/:email', (req,res) => {
     transporter.sendMail({
         from: '"Disfruton App" <process.env.EMAIL>',
         to: req.params.email,
-        subject: 'Gracias por registrarte en Disfruton App',
+        subject: 'Gracias por tu compra en Disfrutón App',
         text: 'Mensaje de bienvenida',
-        html:  `<h2>Ya eres parte de la página con los mejores planes</h2>
-        <p>You can start sharing your favourites worlds locations with the other user and discover
-        where can you go in your next travel, what can you do there and why have to go, the triple 'W' + I do.</p>
-        <p>Thank you for your registration and enjoy!</p>
-        <img src=https://res.cloudinary.com/dpkvkfi5u/image/upload/v1564399013/wIdo-gallery/logo-wIdo.png.png>`,
+        html:  `<h2>Tu confirmación de Disfrutón</h2>
+        <p>¡Tu Disfrutón ya está listo para ser utilizado!</p>
+        <p>DERECHO DE DESISTIMIENTO
+        Tienes derecho a desistir de la compra de tu cupón
+        en el plazo de 14 días naturales a contar desde el
+        día en que recibas el email de confirmación de tu
+        compra, salvo que dicho derecho no sea aplicable
+        de conformidad con la Ley y así se especifique en
+        las condiciones especiales de la oferta. Asimismo, si
+        canjeas voluntariamente tu cupón durante ese
+        plazo de 14 días, perderás tu derecho a desistir de
+        la compra.</p>
+        <p>CANJE
+        Excepto si el apartado condiciones dice lo
+        contrario, tienes el derecho a cancelar la compra
+        del cupón dentro de los siguientes 14 días
+        naturales desde el día que recibiste el email de
+        confirmación de tu compra. Sin embargo, si canjeas
+        el cupón dentro de este periodo de 14 días,
+        perderás el derecho a desistimiento.</p>
+        <img src=https://res.cloudinary.com/ebg-ester/image/upload/v1567110748/el9soo8m2e5zaqfzfutd.png>`,
         attachments: [
             {
                 filename: "cupon.pdf",

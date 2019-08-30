@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import Services from '../../services/plan.services'
-//import SearchInput, {createFilter} from 'react-search-input'
+import {Link} from 'react-router-dom'
+ //import SearchInput, {createFilter} from 'react-search-input'
+ import { MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter } from 'mdbreact'
 
 import PlanCard from './PlanCard'
 import CategoryModal from './CategoryModal';
@@ -8,6 +10,12 @@ import { Modal } from 'react-bootstrap'
 
 //import Dialog from '@material-ui/core/Dialog';
 //const KEYS_TO_FILTERS = ['category', 'title']
+
+// const modalStyle = function() {
+//     return {
+//         background: 'transparent',
+//         }
+// }
 
 class PlanList extends Component {
 
@@ -100,33 +108,45 @@ class PlanList extends Component {
   
         return (
             <>
-            <div>
 
-                <button className="btn btn-dark btn-big" onClick={this.handleModalOpen}>Buscar por categoría</button>
-                <Modal show={this.state.showModal} onHide={this.handleModalClose} onClick={this.handleModalClose}>
-                    <Modal.Body>
-                <CategoryModal 
-                    handleState={this.handleState}
-                    handleCatSearchBeauty={this.handleCatSearchBeauty}
-                    handleCatSearchAuto={this.handleCatSearchAuto}
-                    handleCatSearchGastro={this.handleCatSearchGastro}
-                    handleCatSearchOcio={this.handleCatSearchOcio}
-                    handleCatSearchHealth={this.handleCatSearchHealth}
-                    handleCatSearchAllPlans={this.handleCatSearchAllPlans}
-                />
-                 </Modal.Body>
-                </Modal>
-            </div>
-            <br/>
-            <div>        
-             {/* <SearchInput className="search-input" onChange={this.searchUpdated} placeholder="Introduce tu búsqueda"/> */}
-             <input className="search-input" name="name" value={this.state.name} onChange={this.handleInput}></input>
-             
-            </div>
+            <div className="container div-home-white align-items-center">
+                        <div className="row register-div-free justify-content-around ">
+
+                          
+                            <div className="col-6" >
+                            <input className="search-input bar-search-input" name="name" value={this.state.name} onChange={this.handleInput} placeholder="Introduce tu búsqueda"></input>
+
+                                
+                            </div>
+                            <div className="col-3">
+                            <input className="search-input location-input" name="name" value="Madrid" placeholder="Madrid" readOnly></input>
+                            </div>
+
+                            <div className="col-3 justify-content-center">
+                            <Link to="/plans"><MDBBtn color="info" >Ver planes</MDBBtn></Link>
+                            </div>
+                            {/* <div className="col-1">
+
+</div> */}
+
+                        </div>
+                    </div>
+
+                    <CategoryModal 
+                            handleState={this.handleState}
+                            handleCatSearchBeauty={this.handleCatSearchBeauty}
+                            handleCatSearchAuto={this.handleCatSearchAuto}
+                            handleCatSearchGastro={this.handleCatSearchGastro}
+                            handleCatSearchOcio={this.handleCatSearchOcio}
+                            handleCatSearchHealth={this.handleCatSearchHealth}
+                            handleCatSearchAllPlans={this.handleCatSearchAllPlans}
+                    />
+
+
                 <div className="container">
 
                     
-                    <h1>Planes</h1>
+                    <h1 className="h1-planlist">Planes</h1>
 
                     {/* {this.props.userInSession && <button className="btn btn-dark btn-big" onClick={this.handleModalOpen}>Nueva montaña rusa</button>} */}
 
@@ -144,3 +164,41 @@ class PlanList extends Component {
 
 
 export default PlanList
+            
+            // <div>
+
+            //     <button className="btn btn-dark btn-big" onClick={this.handleModalOpen}>Buscar por categoría</button>
+            //     <Modal className="modal-backdrop" show={this.state.showModal} onHide={this.handleModalClose} onClick={this.handleModalClose}>
+            //         <Modal.Body >
+            //     <CategoryModal 
+            //         handleState={this.handleState}
+            //         handleCatSearchBeauty={this.handleCatSearchBeauty}
+            //         handleCatSearchAuto={this.handleCatSearchAuto}
+            //         handleCatSearchGastro={this.handleCatSearchGastro}
+            //         handleCatSearchOcio={this.handleCatSearchOcio}
+            //         handleCatSearchHealth={this.handleCatSearchHealth}
+            //         handleCatSearchAllPlans={this.handleCatSearchAllPlans}
+            //     />
+            //      </Modal.Body>
+            //     </Modal>
+            // </div>
+            // <br/>
+            // <div>        
+            //  {/* <SearchInput className="search-input" onChange={this.searchUpdated} placeholder="Introduce tu búsqueda"/> */}
+            //  <input className="search-input" name="name" value={this.state.name} onChange={this.handleInput} placeholder="Introduce tu búsqueda"></input>
+             
+            // </div>
+            //     <div className="container">
+
+                    
+            //         <h1>Planes</h1>
+
+            //         {/* {this.props.userInSession && <button className="btn btn-dark btn-big" onClick={this.handleModalOpen}>Nueva montaña rusa</button>} */}
+
+            //         <div className="row coasters-list">
+
+            //             {this.state.plans.map(plan => <PlanCard key={plan._id} {...plan} />)}
+            //             {/* {filteredPlans.map(plan => <PlanCard key={plan._id} {...plan} />)} */}
+
+            //         </div>
+            //     </div>

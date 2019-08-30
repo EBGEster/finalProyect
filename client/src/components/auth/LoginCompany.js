@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import AuthServices from '../../services/auth.services'
+import { withRouter } from "react-router";
+import { MDBCard, MDBCardBody, MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from 'mdbreact';
+
 
 class Login extends Component {
 
@@ -35,18 +38,57 @@ class Login extends Component {
     render() {
 
         return (
-            <div className="container">
-                <h1>Inicio de sesión de usuario</h1>
-                <form onSubmit={this.handleFormSubmit}>
-                    Usuario: <br/> <input name="username" type="text" value={this.state.username} onChange={this.handleInputChange} /> <br></br>
-                    Contraseña: <br/> <input name="password" type="password" value={this.state.password} onChange={this.handleInputChange} /> <br></br>
-                    <br/>
-                    <input type="submit" value="Iniciar sesión" />
-                </form>
-            </div>
+            <MDBRow>
+             <MDBCol md="1"/>
+               <MDBCol md="10">
+                 <form onSubmit={this.handleFormSubmit}>
+                   <div className="grey-text">
+                      
+                     <MDBInput
+                        
+                       label="Tu nombre"
+                       icon="user"
+                       group
+                       type="text"
+                       validate
+                       error="wrong"
+                       success="right"
+                          name="username"
+                         value={this.state.username}
+                           onInput={this.handleInputChange}
+                     />
+                     <MDBInput
+                       label="Tu contraseña"
+                       icon="lock"
+                       group
+                       type="password"
+                       validate
+          name="password"
+                    value={this.state.password}
+                    onInput={this.handleInputChange}
+                     />
+                   </div>
+                   <div className="text-center">
+                     <MDBBtn color="info" size="lg" type="submit">Acceder</MDBBtn>
+                   </div>
+                 </form>
+               </MDBCol>
+             <MDBCol md="1"/>
+
+             </MDBRow>
+
+            // <div className="container">
+            //     <h1>Inicio de sesión de usuario</h1>
+            //     <form onSubmit={this.handleFormSubmit}>
+            //         Usuario: <br/> <input name="username" type="text" value={this.state.username} onChange={this.handleInputChange} /> <br></br>
+            //         Contraseña: <br/> <input name="password" type="password" value={this.state.password} onChange={this.handleInputChange} /> <br></br>
+            //         <br/>
+            //         <input type="submit" value="Iniciar sesión" />
+            //     </form>
+            // </div>
 
         )
     }
 }
 
-export default Login
+export default withRouter(Login)

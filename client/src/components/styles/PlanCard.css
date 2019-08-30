@@ -7,3 +7,25 @@ a , a:hover {
     text-decoration: none;
     color:#000000
 }
+
+.blank-space:hover {
+    -webkit-transform:scale(1.1);
+    transform:scale(1.1);
+    
+}
+.blank-space {
+    transition: all .5s;
+}
+
+.card-footer {
+    background: white
+
+}
+
+.h1-planlist {
+    margin-bottom: 50px;
+}
+
+.card {
+    box-shadow: 5px 5px 5px rgba(0,0,0,.05)
+}

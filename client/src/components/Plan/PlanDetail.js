@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 //import { Link } from 'react-router-dom'
 import Services from '../../services/plan.services'
+import CommentServices from '../../services/comment.services'
 
 import SimpleMap from '../Map/SimpleMap'
 
+import axios from 'axios'
 import Comment from '../svg/comment'
 import Views from '../svg/views'
 import Time from '../svg/time'
@@ -12,6 +14,7 @@ import RatingPlan from '../Payment/RatingPlan';
 import { Modal } from 'react-bootstrap'
 import CheckoutForm from '../Payment/CheckoutForm'
 import { Elements, StripeProvider } from 'react-stripe-elements'
+import CommentPlanCard from '../comments/CommentPlanCard';
 
 //import '../styles/plan-detail.css'
 
@@ -21,9 +24,11 @@ class PlanDetail extends Component {
     constructor(props) {
         super(props)
         this.state = { 
-            showModal: false
+            showModal: false,
+            comments:[]
         }
         this.service = new Services()
+        this.commentService = new CommentServices()
     }
 
     componentDidMount() {
@@ -31,13 +36,19 @@ class PlanDetail extends Component {
         this.service.getOnePlan(this.props.match.params.id)
             .then(response => this.setState({ plan: response.data }))
             .catch(err => console.log('err', err))
+
+        this.commentService.getPlanComments(this.props.match.params.id)
+            .then(response => {
+                console.log(response)
+                this.setState({comments: response.data})})
+            .catch(err => console.log('err', err))
      }
 
     handleModalOpen = () => this.setState({ showModal: true })
     handleModalClose = () => this.setState({ showModal: false })
 
     render() {
-        console.log(this.props)
+        console.log(this.state.comments)
         if(this.state.plan) {
             // console.log(this.state.plan.stock)
             let theStock
@@ -51,19 +62,6 @@ class PlanDetail extends Component {
             
             <>
 
-                <Modal show={this.state.showModal} onHide={this.handleModalClose}>
-                    <Modal.Body>
-                    <StripeProvider apiKey="pk_test_3gY3KPCIBehXqwZiY02Pf0sX00pVolrBCx">
-                        <div className="example">
-                             <h1>{this.state.plan.title}</h1>
-                             <Elements>
-                            <CheckoutForm total={this.state.plan.price} plan={this.state.plan} closeModal={this.handleModalClose} name={this.props.loggedInUser.data.username} email={this.props.loggedInUser.data.email}/>
-                         </Elements>
-                        </div>
-                    </StripeProvider>
-                        {/* <CheckoutForm closeModal={this.handleModalClose} user={this.props.loggedInUser.data}/> */}
-                    </Modal.Body>
-                </Modal>
 
             <div className="container">
                 <div className="row">
@@ -90,7 +88,7 @@ class PlanDetail extends Component {
 
                         <h3>Por solo    {this.state.plan.price} € </h3>
 
-                        <button className="btn btn-dark" onClick={this.handleModalOpen}> ¡Compra ya!</button>
+                        <button className="btn btn-info" onClick={this.handleModalOpen}> ¡Compra ya!</button>
                     </div>
                     <div className="w-100"></div>
                     <div className="col">
@@ -102,15 +100,30 @@ class PlanDetail extends Component {
                     </div>
                     <div className="col">
                         <h3>Opiniones de nuestros clientes</h3>
-                        <p>{this.state.plan.rate} <RatingPlan rate={this.state.plan.rate}/></p>
+                        {this.state.comments.map((comment,idx) => <CommentPlanCard key={idx} {...comment} />)}
+                        
+                        {/* <p>{this.state.plan.rate} <RatingPlan rate={this.state.plan.rate}/></p>
                         <div>
-                            {/*Aquí hay que hacer un map con los comentarios */}
+                            
+                            {/*Aquí hay que hacer un map con los comentarios }
                             <h4>Nombre usuario que comentó</h4>
                             <p>Lorem ipsum dolor sit amet consectetur adipiscing elit, taciti ante potenti faucibus natoque congue sociosqu, magnis penatibus lobortis fusce mus ut. Tellus proin mauris vehicula ultricies rutrum tempus nullam mi euismod iaculis, sociis dictum accumsan justo non porta sapien fames suscipit ridiculus aliquam, nostra aliquet curabitur urna luctus pulvinar dictumst varius praesent. </p>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
+                <Modal show={this.state.showModal} onHide={this.handleModalClose}>
+                    <Modal.Body>
+                    <StripeProvider apiKey="pk_test_3gY3KPCIBehXqwZiY02Pf0sX00pVolrBCx">
+                        <div className="example">
+                             <Elements>
+                            <CheckoutForm total={this.state.plan.price} plan={this.state.plan} closeModal={this.handleModalClose} name={this.props.loggedInUser.data.username} email={this.props.loggedInUser.data.email}/>
+                         </Elements>
+                        </div>
+                    </StripeProvider>
+                        {/* <CheckoutForm closeModal={this.handleModalClose} user={this.props.loggedInUser.data}/> */}
+                    </Modal.Body>
+                </Modal>
             </>
         )
     } else {

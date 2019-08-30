@@ -1,8 +1,9 @@
 var QRCode = require('qrcode')
 
 
-module.exports = ({ name, price1, price2, receiptId , qrData}) => {
+module.exports = ({ companyName, title, imageUrl, price, address, city, terms, qrData}) => {
    let qrCode = ""
+   console.log(companyName)
    return QRCode.toDataURL(qrData)
       .then(qr => {
           return qrCode = qr //console.log(qr, "Ahora soy una promesa babe")
@@ -16,6 +17,11 @@ module.exports = ({ name, price1, price2, receiptId , qrData}) => {
                <meta charset="utf-8">
                <title>PDF Result Template</title>
                <style>
+               img {
+                  width: 150px
+               }
+
+               
                   .invoice-box {
                   max-width: 800px;
                   margin: auto;
@@ -89,54 +95,85 @@ module.exports = ({ name, price1, price2, receiptId , qrData}) => {
                </style>
             </head>
             <body>
-               <div class="invoice-box">
-                  <table cellpadding="0" cellspacing="0">
-                     <tr class="top">
-                        <td colspan="2">
-                           <table>
-                              <tr>
-                                 <td class="title"><img  src="https://i2.wp.com/cleverlogos.co/wp-content/uploads/2018/05/reciepthound_1.jpg?fit=800%2C600&ssl=1"
-                                    style="width:100%; max-width:156px;"></td>
-                                 <td>
-                                    Datum: ${`${today.getDate()}. ${today.getMonth() + 1}. ${today.getFullYear()}.`}
-                                 </td>
-                              </tr>
-                           </table>
-                        </td>
-                     </tr>
-                     <tr class="information">
-                        <td colspan="2">
-                           <table>
-                              <tr>
-                                 <td>
-                                    Customer name: ${name}
-                                 </td>
-                                 <td>
-                                    Receipt number: ${receiptId}
-                                 </td>
-                              </tr>
-                           </table>
-                        </td>
-                     </tr>
-                     <tr class="heading">
-                        <td>Bought items:</td>
-                        <td>Price</td>
-                     </tr>
-                     <tr class="item">
-                        <td>First item:</td>
-                        <td>${price1}$</td>
-                     </tr>
-                     <tr class="item">
-                        <td>Second item:</td>
-                        <td>${price2}$</td>
-                     </tr>
-                  </table>
-                  <br />
-                  <img src=${qrCode} />
-                  <h1 class="justify-center">Total price: ${parseInt(price1) + parseInt(price2)}$</h1>
-               </div>
-            </body>
-         </html>
+            <img src="" alt="logo">
+            <div class="container">
+                <div class="row">
+                    <div class="col-8 .invoice-box">
+                        <h2>${companyName}</h2>
+                        <h1>${title}</h1>
+                        <p><strong>Fecha de compra: ${`${today.getDate()}. ${today.getMonth() + 1}. ${today.getFullYear()}.`}</strong></p>
+                        <small>El cupón caduca a los 6 meses desde la fecha de compra</small>
+        
+                    </div>
+                    <div class="col-4 bg-grey">
+                        <img src=${imageUrl} alt=${companyName}>
+                    </div>    
+                </div>
+        
+                <div class="row">
+                    <div class="col-4">
+                        <section>
+                        <h3>Detalles del pedido</h3>
+                        <p>${price}</p>
+                    </section>
+                    <section>
+                        <h3>Método de reserva</h3>
+                        <p>1. Se necesita previa reserva llamando al 065-
+                                63-72-22 o escribiendo un correo a
+                                info@${companyName}.com
+                                y tendrás que dar tu código de Groupon.
+                                Lunes a Viernes de 19-20h y
+                                de 20-21h.
+                                Sábados de 21-22h.
+                                </p>
+                    </section>
+                    <section>
+                        <h3>Dirección</h3>
+                        <h4>${companyName}</h4>
+                        <p>${address}</p>
+                        <p>${city}</p>
+                    </section>
+                    </div>
+                    <div class="col-4">
+                        <section>
+                            <h3>Condiciones</h3>
+                            <p>${terms}</p>
+                        </section>
+                    </div>
+                    <div class="col-4 bg-grey">
+                        <section>
+                            <h5>DERECHO DE DESISTIMIENTO</h5>
+                            <p>Tienes derecho a desistir de la compra de tu cupón
+                                    en el plazo de 14 días naturales a contar desde el
+                                    día en que recibas el email de confirmación de tu
+                                    compra, salvo que dicho derecho no sea aplicable
+                                    de conformidad con la Ley y así se especifique en
+                                    las condiciones especiales de la oferta. Asimismo, si
+                                    canjeas voluntariamente tu cupón durante ese
+                                    plazo de 14 días, perderás tu derecho a desistir de
+                                    la compra.</p>
+                        </section>
+                        <section>
+                            <h5>CANJE</h5>
+                            <p>Excepto si el apartado condiciones dice lo
+                                    contrario, tienes el derecho a cancelar la compra
+                                    del cupón dentro de los siguientes 14 días
+                                    naturales desde el día que recibiste el email de
+                                    confirmación de tu compra. Sin embargo, si canjeas
+                                    el cupón dentro de este periodo de 14 d</p>
+                        </section>
+                    </div>
+        
+                </div>
+                <div class="row">
+                    <div class="col4">
+                            <img src=${qrCode} alt="qrcode"/>
+                    </div>
+                </div>
+            </div>
+            
+        </body>
+               
          `)
      
       
@@ -146,3 +183,53 @@ module.exports = ({ name, price1, price2, receiptId , qrData}) => {
          .catch(err => console.log(err, "sere yo el error?"))
       
       }
+
+
+      // <div class="invoice-box">
+      //             <table cellpadding="0" cellspacing="0">
+      //                <tr class="top">
+      //                   <td colspan="2">
+      //                      <table>
+      //                         <tr>
+      //                            <td class="title"><img  src="https://i2.wp.com/cleverlogos.co/wp-content/uploads/2018/05/reciepthound_1.jpg?fit=800%2C600&ssl=1"
+      //                               style="width:100%; max-width:156px;"></td>
+      //                            <td>
+      //                               Datum: ${`${today.getDate()}. ${today.getMonth() + 1}. ${today.getFullYear()}.`}
+      //                            </td>
+      //                         </tr>
+      //                      </table>
+      //                   </td>
+      //                </tr>
+      //                <tr class="information">
+      //                   <td colspan="2">
+      //                      <table>
+      //                         <tr>
+      //                            <td>
+      //                               Customer name: ${name}
+      //                            </td>
+      //                            <td>
+      //                               Receipt number: ${receiptId}
+      //                            </td>
+      //                         </tr>
+      //                      </table>
+      //                   </td>
+      //                </tr>
+      //                <tr class="heading">
+      //                   <td>Bought items:</td>
+      //                   <td>Price</td>
+      //                </tr>
+      //                <tr class="item">
+      //                   <td>First item:</td>
+      //                   <td>${price1}$</td>
+      //                </tr>
+      //                <tr class="item">
+      //                   <td>Second item:</td>
+      //                   <td>${price2}$</td>
+      //                </tr>
+      //             </table>
+      //             <br />
+      //             <img src=${qrCode} />
+      //             <h1 class="justify-center">Total price: ${parseInt(price1) + parseInt(price2)}$</h1>
+      //          </div>
+      //       </body>
+      //    </html>

@@ -3,13 +3,16 @@ import {Card, Button} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 import couponServices from '../../services/coupon.services'
 import CouponCard from './CouponCard'
-
+import CommentCard from '../comments/Comment.Card'
+import RatePlan from '../comments/RatePlan'
 
 class UserCoupons extends Component {
     constructor(){
         super()
         this.state = {
-            coupons: []
+            coupons:[],
+            
+
         }
         this.cpnServices = new couponServices()
     }
@@ -24,10 +27,33 @@ class UserCoupons extends Component {
         } )
     }
 
+    // handleInputChange = e => {
+    //     const { name, value } = e.target
+    //     this.setState({ [name]: value })
+    // }
+
+    // handleFormCommentSubmit = e => {
+    //     e.preventDefault()
+    //     const { username, plan, text, rate } = this.state
+    //     axios.post(`${process.env.REACT_APP_URL_API}createComment`, this.state)
+    //         .then(theLoggedUser => {
+    //             this.setState({
+    //                 username: '',
+    //                 password: ''
+    //             })
+                
+    //             this.props.history.push('/profile')
+    //         })
+    //         .catch(err => console.log(err.response.data.message))
+    // }
+
     render() {
         
         return (
             <>
+            {/* componente valoracion hay que pasarle user plan*/}
+            
+            
                 <Link to="/profile">Volver</Link>
 
                 <div className="container">

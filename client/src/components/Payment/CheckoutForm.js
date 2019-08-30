@@ -131,22 +131,88 @@ pdfGenerated = () => {
       )
     }
     return (
-      <div className="checkout">
-        <p>Introduzca información de facturación para completar la compra</p>
-        <p>Subtotal  {this.props.total} €</p>
-        <form onSubmit={this.handleFormSubmit}>
-          <div className="form-group">
-            <label htmlFor="input-nombre">Código promocional</label>
-            <input name="inputCode" type="text" className="form-control" id="input-inputCode" onChange={this.handleChangeInput} value={this.state.inputCode}/>
-          </div>
-        <button type="submit" className="btn btn-dark btn-sm ">Aplicar</button>
-        </form>
-        <p>Total {this.state.price}</p>
-        <CardElement />
-        <button onClick={this.submit}>Realizar compra</button>
-      </div>
-    );
-  }
-}
+      <div className="container">
+          <div classname="row">
 
-export default injectStripe(CheckoutForm);
+              <h3>Datos personales</h3>
+          </div>
+          <div className="row">
+              <div className="form-group col-5">
+                <label htmlFor="exampleInput">Nombre</label>
+                <input type="text" id="exampleInput" className="form-control" />
+              </div>
+              <div className="form-group col-5">
+                <label htmlFor="exampleInput">Apellidos</label>
+                <input type="text" id="exampleInput" className="form-control" />
+              </div>
+          </div>
+          <div className="row">
+            <div className="form-group col-10">
+                <label htmlFor="exampleInput">email</label>
+                <input type="email" id="exampleInput" className="form-control" />
+              </div>
+          </div>
+          <div className="row">
+          <h3>Método de pago</h3>
+          </div>    
+          <div className="row">
+              <div class="custom-control custom-radio col-4">
+                <input type="radio" class="custom-control-input" id="defaultChecked" name="defaultExampleRadios" checked/>
+                <label class="custom-control-label" for="defaultChecked">Credit Card</label>
+              </div>
+              <div className="col-2"></div>
+              <div className="col-6">
+                <img className="credit-card" src="https://res.cloudinary.com/ebg-ester/image/upload/v1567136784/gy8yxtwcrx33qr2u2lbb.svg" alt="mc"/>
+                <img className="credit-card" src="https://res.cloudinary.com/ebg-ester/image/upload/v1567136784/mnetfojk0bimnbdrabws.svg" alt="visa"/>
+                <img className="credit-card" src="https://res.cloudinary.com/ebg-ester/image/upload/v1567136784/godvhs40etyh0mxmpr4m.svg" alt="amex"/>
+
+              </div>
+          </div>
+          <div className="row">
+            <div>
+              <form onSubmit={this.handleFormSubmit}>
+                  <div className="form-group">
+                    <label htmlFor="input-nombre">Código promocional</label>
+                    <input name="inputCode" type="text" className="form-control" id="input-inputCode" onChange={this.handleChangeInput} value={this.state.inputCode}/>
+                  </div>
+                <button type="submit" className="btn btn-info btn-sm ">Aplicar</button>
+              </form>
+            </div>
+
+          </div>
+          <div className="row btn-buy">
+
+            <h5>Subtotal {this.props.total} €</h5>
+          </div>
+          <div className="row btn-buy">
+            <h5>Total {this.state.price} €</h5>
+          </div>
+          
+            <CardElement/>
+          
+          <div className="row btn-buy">
+            <div className="col-8"></div>
+            <div className="col-4">
+                <button className="btn btn-info" onClick={this.submit}>Comprar</button>
+            </div>
+          </div>
+      </div>
+      );
+    }
+  }
+  
+  export default injectStripe(CheckoutForm);
+  // <div className="checkout">
+  //   <p>Introduzca información de facturación para completar la compra</p>
+  //   <p>Subtotal  {this.props.total} €</p>
+  //   <form onSubmit={this.handleFormSubmit}>
+  //     <div className="form-group">
+  //       <label htmlFor="input-nombre">Código promocional</label>
+  //       <input name="inputCode" type="text" className="form-control" id="input-inputCode" onChange={this.handleChangeInput} value={this.state.inputCode}/>
+  //     </div>
+  //   <button type="submit" className="btn btn-dark btn-sm ">Aplicar</button>
+  //   </form>
+  //   <p>Total {this.state.price}</p>
+  //   <CardElement />
+  //   <button onClick={this.submit}>Realizar compra</button>
+  // </div>

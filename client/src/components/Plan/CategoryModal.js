@@ -1,10 +1,5 @@
 import React, {Component} from 'react'
-import allPlans from '../../logos/discount-voucher.svg'
-import beauty from '../../logos/dryer.svg'
-import auto from '../../logos/car-service.svg'
-import ocio from '../../logos/cycling.svg'
-import health from '../../logos/heart-rate.svg'
-import gastro from '../../logos/dish.svg'
+
 
 //import  {Link} from 'react-router-dom'
 
@@ -15,6 +10,9 @@ class CategoryModal extends Component {
 
     constructor(props){
         super(props)
+        this.state = [
+
+        ]
     }
  
     render() {
@@ -22,45 +20,62 @@ class CategoryModal extends Component {
         return(
 
         <div className="container cat-box">
-            {/* <button onClick={this.props.handleState}>OBeauty</button> */}
             
-                 <button className="cat-link" onClick={(e)=>{this.props.handleState(); this.props.handleCatSearchAllPlans()}} > 
-                    <div className="cat-elm-div">
-                        <img src={allPlans} alt="AllPlans" className="cat-img"/>
-                        <p className="cat-p">Todos los planes</p>
+                <div className="row">
+                    <div className="col-2 cat-sqr">
+                    <button className="cat-link" onClick={(e)=>{this.props.handleState(); this.props.handleCatSearchAllPlans()}} > 
+                        <div className="cat-elm-div">
+                            <img src="https://res.cloudinary.com/ebg-ester/image/upload/v1567101739/vz8o8tpmsb1egnkzwa8p.png" alt="AllPlans" className="cat-img"/><br/>
+                            <p className="cat-p">Todos los planes</p>
+                        </div>
+                    </button>
                     </div>
-                </button>
-                <button className="cat-link" onClick={(e) => {this.props.handleState(); this.props.handleCatSearchBeauty()}} >
-                    <div className="cat-elm-div">
-                        <img src={beauty} alt="beauty" className="cat-img"/>
-                        <p className="cat-p">Cuidado personal</p>
+                    <div className="col-2 cat-sqr">
+
+                    <button className="cat-link" onClick={(e) => {this.props.handleState(); this.props.handleCatSearchBeauty()}} >
+                        <div className="cat-elm-div">
+                            <img src="https://res.cloudinary.com/ebg-ester/image/upload/v1567101739/ue9svzipsypvy7g0589d.png" alt="beauty" className="cat-img"/><br/>
+                            <p className="cat-p">Cuidado personal</p>
+                        </div>
+                    </button>
                     </div>
-                </button>
-                <button to="/" className="cat-link" onClick={(e) => {this.props.handleState(); this.props.handleCatSearchAuto()}}>
-                    <div className="cat-elm-div">
-                        <img src={auto} alt="automotive" className="cat-img"/>
-                        <p className="cat-p">Automóvil</p>
+                    <div className="col-2 cat-sqr">
+
+                    <button to="/" className="cat-link" onClick={(e) => {this.props.handleState(); this.props.handleCatSearchAuto()}}>
+                        <div className="cat-elm-div">
+                            <img src="https://res.cloudinary.com/ebg-ester/image/upload/v1567101739/es7ougmdntmvhynbg4z7.png" alt="automotive" className="cat-img"/><br/>
+                            <p className="cat-p">Automóvil</p>
+                        </div>
+                    </button>
                     </div>
-                </button>
-                <button to="/" className="cat-link" onClick={(e) => {this.props.handleState(); this.props.handleCatSearchOcio()}}>
-                    <div className="cat-elm-div">
-                        <img src={ocio} alt="leisure" className="cat-img"/>
-                        <p className="cat-p">Ocio</p>
+                    <div className="col-2 cat-sqr">
+
+                    <button to="/" className="cat-link" onClick={(e) => {this.props.handleState(); this.props.handleCatSearchOcio()}}>
+                        <div className="cat-elm-div">
+                            <img src="https://res.cloudinary.com/ebg-ester/image/upload/v1567101739/rstvgjsn9vxjorkelxe0.png" alt="leisure" className="cat-img"/><br/>
+                            <p className="cat-p">Ocio</p>
+                        </div>
+                    </button>
                     </div>
-                </button>
-                <button to="/" className="cat-link" onClick={(e) => {this.props.handleState(); this.props.handleCatSearchHealth()}}>
-                    <div className="cat-elm-div">
-                        <img src={health} alt="health" className="cat-img"/>
-                        <p className="cat-p">Salud y bienestar</p>
+                    <div className="col-2 cat-sqr">
+
+                    <button to="/" className="cat-link" onClick={(e) => {this.props.handleState(); this.props.handleCatSearchHealth()}}>
+                        <div className="cat-elm-div">
+                            <img src="https://res.cloudinary.com/ebg-ester/image/upload/v1567101739/imnnmpo8ujo1vmfaylh3.png" alt="health" className="cat-img"/><br/>
+                            <p className="cat-p">Salud y bienestar</p>
+                        </div>
+                    </button>
                     </div>
-                </button>
-                <button to="/" className="cat-link" onClick={(e) => {this.props.handleState(); this.props.handleCatSearchGastro()}}>
-                    <div className="cat-elm-div">
-                        <img src={gastro} alt="gastro" className="cat-img"/>
-                        <p className="cat-p">Comida y bedidas</p>
+                    <div className="col-2 cat-sqr">
+
+                    <button to="/" className="cat-link" onClick={(e) => {this.props.handleState(); this.props.handleCatSearchGastro()}}>
+                        <div className="cat-elm-div">
+                            <img src="https://res.cloudinary.com/ebg-ester/image/upload/v1567101739/as004vxex5ssofyj1rcc.png" alt="gastro" className="cat-img"/><br/>
+                            <p className="cat-p">Comida y bedidas</p>
+                        </div>
+                    </button>
                     </div>
-                </button>
-                
+                </div>
                 
         </div>
         // <div className="container cat-box">

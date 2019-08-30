@@ -1,5 +1,9 @@
 import React, {Component} from 'react'
 import AuthServices from '../../services/auth.services'
+import { MDBCard, MDBCardBody, MDBContainer, MDBRow, MDBCol, MDBInput, MDBBtn } from 'mdbreact'
+import { withRouter } from "react-router";
+
+
 
 class Signup extends Component {
 
@@ -35,19 +39,70 @@ class Signup extends Component {
     }
     render() {
         return(
-        <div>
-            <h1>Registro Nuevo Usuario</h1>
-            <form onSubmit={this.handleFormSubmit}>
-                Usuario: <br/> <input name="username" type="text" value={this.state.username} onChange={this.handleInputChange} /> <br/>
-                Email: <br/> <input name="email" type="mail" value={this.state.email} onChange={this.handleInputChange} /> <br/>
-                Contraseña: <br/> <input name="password" type="password" value={this.state.password} onChange={this.handleInputChange} /> <br/>
-                {/* Confirmar contraseña: <br/> <input name="password" type="password" value={this.state.password} onChange={this.handleInputChange} /> <br/> */}
-                <br/> 
-                <input type="submit" value="Enviar" />
-            </form>
-        </div>
+
+<MDBRow>
+             <MDBCol md="1"/>
+               <MDBCol md="10">
+                 <form onSubmit={this.handleFormSubmit}>
+                   <div className="grey-text">
+                    
+                     <MDBInput
+                       label="Tu nombre"
+                       icon="user"
+                       group
+                       type="text"
+                       validate
+                       error="wrong"
+                       success="right"
+                          name="username"
+                         value={this.state.username}
+                           onInput={this.handleInputChange}
+                     />
+                     <MDBInput
+                        label="Tu email"
+                        icon="user"
+                        group
+                        type="email"
+                        validate
+                        error="wrong"
+                        success="right"
+                           name="email"
+                          value={this.state.email}
+                            onInput={this.handleInputChange}
+                      />
+                     <MDBInput
+                       label="Tu contraseña"
+                       icon="lock"
+                       group
+                       type="password"
+                       validate
+                        name="password"
+                      value={this.state.password}
+                        onInput={this.handleInputChange}
+                     />
+                   </div>
+                   <div className="text-center">
+                     <MDBBtn color="info" size="lg" type="submit">Crear Cuenta</MDBBtn>
+                   </div>
+                 </form>
+               </MDBCol>
+             <MDBCol md="1"/>
+
+             </MDBRow>
+
+        // <div>
+        //     <h1>Registro Nuevo Usuario</h1>
+        //     <form onSubmit={this.handleFormSubmit}>
+        //         Usuario: <br/> <input name="username" type="text" value={this.state.username} onChange={this.handleInputChange} /> <br/>
+        //         Email: <br/> <input name="email" type="mail" value={this.state.email} onChange={this.handleInputChange} /> <br/>
+        //         Contraseña: <br/> <input name="password" type="password" value={this.state.password} onChange={this.handleInputChange} /> <br/>
+        //         {/* Confirmar contraseña: <br/> <input name="password" type="password" value={this.state.password} onChange={this.handleInputChange} /> <br/> */}
+        //         <br/> 
+        //         <input type="submit" value="Enviar" />
+        //     </form>
+        // </div>
          )
     }
 }
 
-export default Signup
+export default withRouter(Signup)

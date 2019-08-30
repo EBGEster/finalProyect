@@ -17,72 +17,26 @@ div .categ {
     transition: all
 } */
 
-.cat-box {
-    /* position: absolute; */
-    display: flex;
-    flex-wrap: wrap;
-    background-color: rgb(255, 255, 255);
-    left: 0px;
-    top: 100%;
-    min-width: 350px;
-    max-width: 350px;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 6px 14px 3px;
-    padding: 12px;
-    border-radius: 0px 3px 3px;
-}
-
 .cat-link {
-     user-select: none;
-    text-align: center;
-    vertical-align: top;
-    line-height: 1;
-    width: 100px;
-    height: 100px;
-    box-shadow: rgba(0, 0, 0, 0) 0px 0px 4px 0px;
-    font-style: normal;
-    text-decoration: none;
-    padding: 12px;
-    border-radius: 2px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: rgb(151, 151, 151);
-    border-image: initial;
-    margin: 4px;
-    transition: all 0.2s linear 0s;
+    width: 100%;
+    border: none;
+    background: white;
+    height: 150px;
 }
 
 .cat-elm-div {
-    user-select: none;
-    text-align: center;
-    vertical-align: top;
-    line-height: 1;
-    width: 100px;
-    height: 100px;
-    box-shadow: rgba(0, 0, 0, 0) 0px 0px 4px 0px;
-    font-style: normal;
-    text-decoration: none;
-    padding: 12px;
-    border-radius: 2px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: rgb(151, 151, 151);
-    border-image: initial;
-    margin: -13px; /*antes había 4px*/
-    transition: all 0.2s linear 0s;
-    background-color: white;
+
 }
 
 .cat-img {
-    display: block;
-    width: 35px;
-    height: 37px;
-    margin: 0px auto 5px;
-}
+    object-fit: initial;
+    object-position: initial;
+    height: auto;
+    width: 47%;
+    margin: 20px 0;
+} 
 
 .cat-p {
-    font-size: 1.125em;
-    font-family: "Source Sans Pro", sans-serif;
-    color: rgb(0, 0, 0);
-    font-weight: 300;
-    margin: 0px;
-}
+
+} 
+

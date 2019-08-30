@@ -19,6 +19,7 @@ import UserBag from './components/Payment/UserBag'
 import PdfCreator from './components/Payment/PdfCreator'
 import UpdateCoupon from './components/Coupon/UpdateCoupon' 
 import UserCoupons from './components/Coupon/UserCoupons' 
+import Home from './components/Home';
 
 class App extends Component {
   constructor(){
@@ -44,10 +45,11 @@ class App extends Component {
       if (this.state.loggedInUser) {
         return(
       <>
-        <NavBar setUser={this.setTheUser} userInSession={this.state.loggedInUser}/>
+        <NavBar cosa={this.props} setUser={this.setTheUser} userInSession={this.state.loggedInUser}/>
         
           <div className="under-nav">
         <Switch> 
+
           <ProtectedRoute exact path='/profile' user={this.state.loggedInUser} component={Profile} />
           <ProtectedRoute exact path='/profile/plans' user={this.state.loggedInUser} component={CompanyPlans} />
           <ProtectedRoute exact path='/profile/coupons' user={this.state.loggedInUser} component={UserCoupons} />
@@ -68,8 +70,10 @@ class App extends Component {
         return (
         <>
           <NavBar setUser={this.setTheUser} userInSession={this.state.loggedInUser}/>
+          
           <div className="under-nav">
         <Switch>
+          <Route exact path='/' render={() => <Home />}/>
           <Route exact path='/plans' render={() => <PlanList userInSession={this.state.loggedInUser}/>}/>
           <Route path="/signup" exact render={match => <Signup {...match} setUser={this.setTheUser} />} />
           <Route path="/signup/company" exact render={match => <SignupCompany {...match} setUser={this.setTheUser} />} />

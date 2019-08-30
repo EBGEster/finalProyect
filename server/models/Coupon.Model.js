@@ -17,7 +17,7 @@ const couponSchema = new Schema({
     state: {type: String, default: "active"},
     email: String,
     username: String,
-    rated: {trype: Boolean, default: false},
+    rated: {type: Boolean, default: false},
     commented: {type: Boolean, default: false}
 }, { timestamps: true })
 const Coupon = mongoose.model('Coupon', couponSchema)

@@ -4,6 +4,14 @@ import '../styles/CommentCard.css'
 
 class CommentCard extends Component{
 
+    constructor() {
+        super()
+        this.state = {
+            rate: undefined,
+            comment: ""
+        }
+    }    
+
     render() {
         return(
         <form class="contact100-form validate-form">

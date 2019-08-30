@@ -28,7 +28,7 @@
   } */
   
   /*---------------------------------------------*/
-  a {
+  /* a {
       font-family: Montserrat-Regular;
       font-size: 14px;
       line-height: 1.7;
@@ -73,16 +73,16 @@
       border: none;
   } */
   
-  textarea {
+  /* textarea {
     outline: none;
     border: none;
-  }
+  } */
   
-  textarea:focus, input:focus {
+  /* textarea:focus, input:focus {
     border-color: transparent !important;
-  }
+  } */
   
-  input:focus::-webkit-input-placeholder { color:transparent; }
+  /* input:focus::-webkit-input-placeholder { color:transparent; }
   input:focus:-moz-placeholder { color:transparent; }
   input:focus::-moz-placeholder { color:transparent; }
   input:focus:-ms-input-placeholder { color:transparent; }
@@ -100,7 +100,7 @@
   textarea::-webkit-input-placeholder { color: #adadad;}
   textarea:-moz-placeholder { color: #adadad;}
   textarea::-moz-placeholder { color: #adadad;}
-  textarea:-ms-input-placeholder { color: #adadad;}
+  textarea:-ms-input-placeholder { color: #adadad;} */
   
   /* label {
     display: block;
@@ -114,13 +114,13 @@
       background: transparent;
   } */
   
-  button:hover {
+  /* button:hover {
       cursor: pointer;
   }
   
   iframe {
       border: none !important;
-  }
+  } */
   
   /*//////////////////////////////////////////////////////////////////
   [ utility ]*/
@@ -133,7 +133,7 @@
   
   /*==================================================================
   [ Background ]*/
-  .bg-container-contact100 {
+  /* .bg-container-contact100 {
     width: 100%;
     height: 100% ;
     background-size: cover;
@@ -160,7 +160,7 @@
   }
   
   /*---------------------------------------------*/
-  .contact100-header {
+  /* .contact100-header {
     width: 100%;
     height: 80px;
     border-bottom: 1px solid rgba(255,255,255,0.1);
@@ -192,13 +192,13 @@
   .btn-show-contact100:hover {
     color: #fff;
     background-color: #846add;
-  }
-  
+  } */
+   
   
   
   /*==================================================================
   [ Content container ]*/
-  .container-contact100 {
+  /* .container-contact100 {
     width: 100%;  
     min-height: 100vh;
     display: -webkit-box;
@@ -221,11 +221,11 @@
     border-radius: 3px;
     position: relative;
     margin-top: 40px;
-  }
+  } */
   
   /*==================================================================
   [ Title form ]*/
-  .contact100-form-title {
+  /* .contact100-form-title {
     font-family: Montserrat-Bold;
     font-size: 30px;
     color: #fff;
@@ -264,12 +264,12 @@
     top: 0;
     left: 0;
     background-color: rgba(67,67,67,0.6);
-  }
+  } */
   
   
   /*==================================================================
   [ Form ]*/
-  
+/*   
   .contact100-form {
     width: 100%;
     display: -webkit-box;
@@ -286,7 +286,7 @@
   /*------------------------------------------------------------------
   [ Input ]*/
   
-  .wrap-input100 {
+  /* .wrap-input100 {
     width: 100%;
     position: relative;
     border: 1px solid #e6e6e6;
@@ -334,11 +334,11 @@
     min-height: 162px;
     padding-top: 22px;
     padding-bottom: 15px;
-  }
+  } */
   
   /*---------------------------------------------*/
   
-  .focus-input100 {
+  /* .focus-input100 {
     position: absolute;
     display: block;
     width: calc(100% + 2px);
@@ -378,13 +378,13 @@
   
   .input100:focus + .focus-input100 + .label-input100 {
     color: #846add;
-  }
+  } */
   
   
   
   /*------------------------------------------------------------------
   [ Button ]*/
-  .container-contact100-form-btn {
+  /* .container-contact100-form-btn {
     width: 100%;
     display: -webkit-box;
     display: -webkit-flex;
@@ -435,14 +435,14 @@
     -webkit-box-shadow: 0 10px 30px 0px rgba(51, 51, 51, 0.5);
     -o-box-shadow: 0 10px 30px 0px rgba(51, 51, 51, 0.5);
     -ms-box-shadow: 0 10px 30px 0px rgba(51, 51, 51, 0.5);
-  }
-  
+  } */
+   
   
   
   /*------------------------------------------------------------------
   [ Responsive ]*/
   
-  @media (max-width: 576px) {
+  /* @media (max-width: 576px) {
     .contact100-form {
       padding: 40px 15px 48px 15px;
     }
@@ -454,13 +454,13 @@
     .label-input100 {
       width: 40px;
     }
-  }
+  } */
   
   
   /*------------------------------------------------------------------
   [ Alert validate ]*/
   
-  .validate-input {
+  /* .validate-input {
     position: relative;
   }
   
@@ -533,19 +533,19 @@
   }
   
   /*---------------------------------------------*/
-  @media (max-width: 576px) {
+  /* @media (max-width: 576px) {
     .btn-hide-validate {
       right: 10px;
     }
     .true-validate::after {
       right: 10px;
     }
-  }
+  } */ 
   
   
   /*//////////////////////////////////////////////////////////////////
   [ Button show / hide ]*/
-  .btn-hide-contact100 {
+  /* .btn-hide-contact100 {
     font-size: 30px;
     color: #fff;
     opacity: 0.6;
@@ -561,4 +561,4 @@
   
   .btn-hide-contact100:hover {
     opacity: 1;
-  }
+  } */ 

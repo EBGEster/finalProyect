@@ -5,21 +5,21 @@ const Plan = require('../models/Plan.Model')
 const Company = require('../models/Company.Model');
 
 router.get('/getAllPlans', (req, res) => {
-    console.log("SOY GET ALL PLANS")
+    //console.log("SOY GET ALL PLANS")
     Plan.find()
         .then(allPlans => res.json(allPlans))
         .catch(err => console.log('Error', err))
 })
 
 router.get('/getCompanyPlans/:id', (req, res) => {
-    console.log(req.params)
+    // console.log(req.params)
     Plan.find({companyName: req.params.id})
         .then(allPlans => res.json(allPlans))
         .catch(err => console.log('Error', err))
 })
 
 router.get('/getOnePlan/:id', (req, res) => {
-    console.log("SOY YO", req.params.id)
+    // console.log("SOY YO", req.params.id)
     Plan.findById(req.params.id)
         .then(thePlan => res.json(thePlan))
         .catch(err => console.log('Error', err))

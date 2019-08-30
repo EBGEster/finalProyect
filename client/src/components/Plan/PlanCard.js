@@ -7,7 +7,7 @@ import RatingPlan from '../Payment/RatingPlan';
 import '../styles/PlanCard.css'
 
 
-const PlanCard = ({ title, description, imageUrl, _id , price, companyName, rate, votes}) => {
+const PlanCard = ({ title, description, imageUrl, _id , price, companyName, address, rate, votes}) => {
 
     return (
         
@@ -17,6 +17,7 @@ const PlanCard = ({ title, description, imageUrl, _id , price, companyName, rate
                     <Card.Img variant="top" src={imageUrl} />
                     <Card.Body>
                         <Card.Title>{companyName}</Card.Title>
+                        <img className="icon-address" src="https://res.cloudinary.com/ebg-ester/image/upload/v1567088047/yvbvtjdpufslvjb5s0zz.svg" /> <small>{address}</small>
                         <div className="rating-div"><RatingPlan rate={rate}/> <small>{votes} votos</small></div>
                         {/* <Card.Text>
                             This is a wider card with supporting text below as a natural lead-in to
@@ -25,7 +26,7 @@ const PlanCard = ({ title, description, imageUrl, _id , price, companyName, rate
                     <Card.Title>{price} €</Card.Title>
                     </Card.Body>
                     <Card.Footer>
-                        <small className="text-muted">{title}</small>
+                        <p className="text-muted">{title}</p>
                     </Card.Footer>
                 </Card>
                 </Link>

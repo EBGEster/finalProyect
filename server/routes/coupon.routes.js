@@ -55,13 +55,12 @@ router.post('/updateCoupon/:id', (req, res) => {
             transporter.sendMail({
                 from: '"Disfruton App" <process.env.EMAIL>',
                 to: updatedCoupon.email,
-                subject: 'Valora tu experiencia con Disfruton App',
+                subject: 'Valora la experiencia de tu último Disfruton ',
                 text: 'Mensaje de bienvenida',
-                html:  `<h2>Ahora que ya has disfrutado</h2>
-                <p>You can start sharing your favourites worlds locations with the other user and discover
-                where can you go in your next travel, what can you do there and why have to go, the triple 'W' + I do.</p>
-                <p>Thank you for your registration and enjoy!</p>
-                <img src=https://res.cloudinary.com/dpkvkfi5u/image/upload/v1564399013/wIdo-gallery/logo-wIdo.png.png>`
+                html:  `<h2>¿Recomendarías Disfrutón?</h2>
+                <p>Recientemente has canjeado un Disfrutón. Por favor, tómate un minuto para evaluar tu experiencia, ya está disponible la opción en tu Área Privada.</p>
+                <h3>¡Gracias por contestar!</h3>
+                <img src=https://res.cloudinary.com/ebg-ester/image/upload/v1567110748/el9soo8m2e5zaqfzfutd.png>`
             })
             res.json(updatedCoupon)} )
         .catch(err => console.log('Error', err))

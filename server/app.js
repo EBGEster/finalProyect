@@ -83,7 +83,7 @@ app.use('/api', require('./routes/auth.routes'))
 app.use('/api', require('./routes/file-upload.routes'))
 app.use('/api', require('./routes/payment.routes'))
 app.use('/api', require('./routes/pdf.routes'))
-app.use('/api', require('./routes/coupon.routes.js'))
+app.use('/api', require('./routes/coupon.routes'))
 
 
 // GET from pdf-routes - Send the generated pdf to the client

@@ -7,16 +7,21 @@ class PdfCreator extends Component {
     constructor(props){
         super(props)
         this.state = {
-            name: 'Adrian',
-            receiptId: 0,
-            price1: 0,
-            price2: 0,
+            companyName: this.props.info.companyName,
+            title: this.props.info.title,
+            imageUrl: this.props.info.imageUrl,
+            price: this.props.info.price,
+            newPrice: this.props.price,
+            address: this.props.info.address,
+            city: this.props.info.city,
+            terms: this.props.info.terms,
             qrData: this.props.qrInfo
          }
     }
 
     componentDidMount(){
         console.log(this.props.qrInfo, "comprobando QUERRE")
+        console.log(this.state)
         this.createAndDownloadPdf()
     }
 

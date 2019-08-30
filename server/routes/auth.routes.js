@@ -69,10 +69,18 @@ authRoutes.post('/signup', (req, res, next) => {
                 subject: 'Gracias por registrarte en Disfruton App',
                 text: 'Mensaje de bienvenida',
                 html:  `<h2>Ya eres parte de la página con los mejores planes</h2>
-                <p>You can start sharing your favourites worlds locations with the other user and discover
-                where can you go in your next travel, what can you do there and why have to go, the triple 'W' + I do.</p>
-                <p>Thank you for your registration and enjoy!</p>
-                <img src=https://res.cloudinary.com/dpkvkfi5u/image/upload/v1564399013/wIdo-gallery/logo-wIdo.png.png>`
+                <p>Aprovecha nuestras ofertas y consigue los mejores planes de tu ciudad al mejor precio.
+                ¡Corre! ¡Qué nos se te escapen! Nuestras ofertas vuelan.</p>
+                <h3>Usa el siguiente código promocional para obtener un 20% de descuento en tu primera compra</h3>
+                <br/>
+                <br/>
+                <br/>
+
+                <h3><strong>So_party</strong></h3>
+                <br/>
+                <br/>
+                <br/>
+                <img src=https://res.cloudinary.com/ebg-ester/image/upload/v1567110748/el9soo8m2e5zaqfzfutd.png>`
             })
             // Automatically log in user after sign up
             // .login() here is actually predefined passport method
@@ -184,7 +192,7 @@ authRoutes.post('/login',  (req, res, next) => {
 
 authRoutes.post('/login/company', (req, res, next) => {
     passport.authenticate('company-local', (err, theUser, failureDetails) => {
-        console.log(theUser)
+        //console.log(theUser)
         if (err) {
             res.status(500).json({ message: 'Something went wrong authenticating user' });
             return;
