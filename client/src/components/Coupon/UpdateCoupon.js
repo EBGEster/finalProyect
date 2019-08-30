@@ -33,7 +33,10 @@ class UpdateCoupon extends Component{
             return (<h1>Ups! Solo las empresas tienen acceso a esta página.</h1>)
         }else if(this.props.user.data.role === "company"){
             return(
-                <button onClick={()=> this.redeemCoupon()}>Canjear Disfrutón</button>
+                <div className="canje-coupon">
+                    <button onClick={()=> this.redeemCoupon()}>Canjear Disfrutón</button>
+
+                </div>
             )
         }
     }
